@@ -1,3 +1,4 @@
+/*
 var harvester = require('harvester');
 
 for(var name in Game.creeps) {
@@ -30,3 +31,4 @@ if(creep.memory.role == 'guard') {
 		creep.attack(targets[0]);
 	}
 }
+*/

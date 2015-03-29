@@ -1,4 +1,15 @@
 var harvester = require('harvester');
+var screep_count = require('screep_count')
+
+
+if(screep_count.screep_count_with_role(harvester) < 2) {
+	Game.spawns.Spawn1.createCreep(
+		[Game.WORK, Game.CARRY, Game.MOVE],
+		'harvester'
+	)
+}
+
+
 
 for(var name in Game.creeps) {
 	var creep = Game.creeps[name];

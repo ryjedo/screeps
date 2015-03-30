@@ -6,16 +6,18 @@ var config = require('config');
 //check current populations and spawn re-inforcements
 //spawner;
 
+//imports config.js and outputs it to console
+var config = require('config');
 console.log(config.stuff);
 
-/*
-if(screep_count.screep_count_with_role(harvester) < 2) {
+
+if(screep_count.screep_count_with_role(harvester) < config.harv_count) {
 	Game.spawns.Spawn1.createCreep(
 		[Game.WORK, Game.CARRY, Game.MOVE],
 		'harvester'
 	)
 }
-
+/*
 
 
 for(var name in Game.creeps) {

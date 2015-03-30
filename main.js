@@ -17,8 +17,6 @@ if(screep_count.screep_count_with_role(harvester) < config.harv_count) {
 		'harvester'
 	)
 }
-/*
-
 
 for(var name in Game.creeps) {
 	var creep = Game.creeps[name];
@@ -50,4 +48,3 @@ if(creep.memory.role == 'guard') {
 		creep.attack(targets[0]);
 	}
 }
-*/

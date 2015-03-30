@@ -1,1 +1,1 @@
-var stuff="a_thing"
+{ stuff: 'a_thing'}

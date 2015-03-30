@@ -1,13 +1,14 @@
 var harvester = require('harvester');
-var screep_count = require('screep_count')
-var spawner = require('spawner')
-require('config.js');
+var screep_count = require('screep_count');
+var spawner = require('spawner');
+var config = { stuff: 'a_thing'};
 
 //check current populations and spawn re-inforcements
-spawner;
+//spawner;
 
 console.log(stuff);
 
+/*
 if(screep_count.screep_count_with_role(harvester) < 2) {
 	Game.spawns.Spawn1.createCreep(
 		[Game.WORK, Game.CARRY, Game.MOVE],
@@ -47,3 +48,4 @@ if(creep.memory.role == 'guard') {
 		creep.attack(targets[0]);
 	}
 }
+*/

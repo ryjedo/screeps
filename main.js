@@ -6,7 +6,7 @@ var config = { stuff: 'a_thing'};
 //check current populations and spawn re-inforcements
 //spawner;
 
-console.log(stuff);
+console.log(config.stuff);
 
 /*
 if(screep_count.screep_count_with_role(harvester) < 2) {

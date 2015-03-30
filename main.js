@@ -14,7 +14,8 @@ console.log(config.stuff);
 if(screep_count.screep_count_with_role(harvester) < config.harv_count) {
 	Game.spawns.Spawn1.createCreep(
 		[Game.WORK, Game.CARRY, Game.MOVE],
-		'harvester'
+		null ,
+		{role: 'harvester'}
 	)
 }
 

@@ -6,7 +6,7 @@ require('config');
 //check current populations and spawn re-inforcements
 spawner;
 
-console.log(config.stuff);
+console.log(stuff);
 
 if(screep_count.screep_count_with_role(harvester) < 2) {
 	Game.spawns.Spawn1.createCreep(

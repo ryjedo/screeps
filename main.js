@@ -1,7 +1,7 @@
 var harvester = require('harvester');
 var screep_count = require('screep_count');
 var spawner = require('spawner');
-var config = { stuff: 'a_thing'};
+var config = require('config');
 
 //check current populations and spawn re-inforcements
 //spawner;

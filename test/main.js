@@ -7,10 +7,12 @@ var config = require('config');
 //spawner;
 
 //imports config.js and outputs it to console
-var config = require('config');
-console.log(config.stuff);
+//var config = require('config');
+//console.log(config.stuff);
 
+screep_count.screep_count_with_role('harvester')
 
+/*
 if(screep_count.screep_count_with_role(harvester) < config.harv_count) {
 	Game.spawns.Spawn1.createCreep(
 		[Game.WORK, Game.CARRY, Game.MOVE],
@@ -49,3 +51,4 @@ if(creep.memory.role == 'guard') {
 		creep.attack(targets[0]);
 	}
 }
+*/

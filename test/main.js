@@ -2,37 +2,9 @@ var harvester = require('harvester');
 var screep_count = require('screep_count');
 var spawner = require('spawner');
 var config = require('config');
-
+var creep_ai = require('creep_ai');
 //check current populations and spawn re-inforcements
 spawner;
 
-for(var name in Game.creeps) {
-	var creep = Game.creeps[name];
-
-	if(creep.memory.role == 'harvester') {
-		harvester(creep);
-	}
-
-	if(creep.memory.role == 'builder') {
-	
-		if(creep.energy == 0) {
-			creep.moveTo(Game.spawns.Spawn1);
-			Game.spawns.Spawn1.transferEnergy(creep);
-		}
-		else {
-			var targets = creep.room.find(Game.CONSTRUCTION_SITES);
-			if(targets.length) {
-				creep.moveTo(targets[0]);
-				creep.build(targets[0]);
-			}
-		}
-	}
-}
-
-if(creep.memory.role == 'guard') {
-	var targets = creep.room.find(Game.HOSTILE_CREEPS);
-	if(targets.length) {
-		creep.moveTo(targets[0]);
-		creep.attack(targets[0]);
-	}
-}
+//move the creeps
+creep_ai

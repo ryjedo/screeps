@@ -18,10 +18,10 @@ module.exports = {
 					++count;
 				}
 			}
-			console.log("Screep_count_with_role:", role, count);
+			//console.log("Screep_count_with_role:", role, count);
 			return count;
 		} else if (module.exports.total() === 0) {
-			console.log("Screep_count_with_role:", role, count);
+			//console.log("Screep_count_with_role:", role, count);
 			return 0;
 		} else {
 			console.log("Screep_count_with_role Error - creep_list.length was", count);

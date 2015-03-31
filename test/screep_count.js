@@ -1,6 +1,6 @@
 module.exports = {
 
-	screep_count_with_role: function(role){
+	with_role: function(role){
 		var count = 0;
 		var creep_list = Game.creeps;
 		

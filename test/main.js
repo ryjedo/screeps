@@ -10,7 +10,7 @@ var config = require('config');
 //var config = require('config');
 //console.log(config.stuff);
 
-screep_count.screep_count_with_role("harvester");
+screep_count.with_role("harvester");
 
 /*
 if(screep_count.screep_count_with_role(harvester) < config.harv_count) {

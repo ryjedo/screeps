@@ -1,5 +1,11 @@
 module.exports = {
 
+	total: function(){
+		var count = Object.keys(Game.creeps).length;
+		//console.log("Total screeps:", count);
+		return count;
+	},
+
 	with_role: function(role){
 		var count = 0;
 		var creep_list = Game.creeps;
@@ -20,11 +26,5 @@ module.exports = {
 		} else {
 			console.log("Screep_count_with_role Error - creep_list.length was", count);
 		}
-	},
-
-	total: function(){
-		var count = Object.keys(Game.creeps).length;
-		//console.log("Total screeps:", count);
-		return count;
 	}
 };

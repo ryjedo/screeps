@@ -12,13 +12,13 @@ module.exports = {
 					++count;
 				}
 			}
-			console.log("Screep_count_with_role: ", role, count);
+			console.log("Screep_count_with_role:", role, count);
 			return count;
 		} else if (Object.keys(creep_list).length === 0) {
-			console.log("Screep_count_with_role: ", role, count);
+			console.log("Screep_count_with_role:", role, count);
 			return 0;
 		} else {
-			console.log("Screep_count_with_role Error - creep_list.length was ", count);
+			console.log("Screep_count_with_role Error - creep_list.length was", count);
 		}
 	},
 

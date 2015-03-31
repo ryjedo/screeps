@@ -11,7 +11,7 @@ var config = require('config');
 //console.log(config.stuff);
 
 screep_count.with_role("harvester");
-screep_count.total;
+screep_count.total();
 
 /*
 if(screep_count.screep_count_with_role(harvester) < config.harv_count) {

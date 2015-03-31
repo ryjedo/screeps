@@ -7,7 +7,7 @@ module.exports = {
 		if(Object.keys(creep_list).length > 0) {
 			for(var name in creep_list) {
 				var creep = creep_list[name];
-				console.log(creep.memory.role);
+				//console.log(creep.memory.role);
 				if (creep.memory.role == role) {
 					++count;
 				}

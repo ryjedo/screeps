@@ -7,4 +7,4 @@ var creep_ai = require('creep_ai');
 spawner;
 
 //move the creeps
-creep_ai
+creep_ai;

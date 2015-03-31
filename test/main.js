@@ -6,13 +6,6 @@ var config = require('config');
 //check current populations and spawn re-inforcements
 spawner;
 
-//imports config.js and outputs it to console
-//var config = require('config');
-//console.log(config.stuff);
-
-//screep_count.with_role("harvester");
-//screep_count.total();
-
 for(var name in Game.creeps) {
 	var creep = Game.creeps[name];
 

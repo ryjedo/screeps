@@ -2,7 +2,7 @@ module.exports = function (creep) {
 
 //	var spawns = [Game.spawns];
 	var my_spawn = Game.spawns['Spawn1'];
-	var energy_source = my_spawn.pos.findClosest(Game.sources);
+	var energy_source = my_spawn.pos.findClosest(Game.SOURCES);
 
 	if(creep.energy < creep.energyCapacity) {
 		creep.moveTo(energy_source);

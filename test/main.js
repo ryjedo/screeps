@@ -11,16 +11,7 @@ spawner;
 //console.log(config.stuff);
 
 //screep_count.with_role("harvester");
-screep_count.total();
-
-/*
-if(screep_count.screep_count_with_role(harvester) < config.harv_count) {
-	Game.spawns.Spawn1.createCreep(
-		[Game.WORK, Game.CARRY, Game.MOVE],
-		null,
-		{role: 'harvester'}
-	)
-}
+//screep_count.total();
 
 for(var name in Game.creeps) {
 	var creep = Game.creeps[name];
@@ -52,4 +43,3 @@ if(creep.memory.role == 'guard') {
 		creep.attack(targets[0]);
 	}
 }
-*/

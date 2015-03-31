@@ -1,7 +1,7 @@
 module.exports = function (creep) {
 
 //	var spawns = [Game.spawns];
-	var my_spawn = Game.spawn['Spawn1'];
+	var my_spawn = Game.spawns['Spawn1'];
 	console.log(my_spawn.pos);
 };/*
 	var energy_source = my_spawn.pos.findClosest(Game.SOURCES);

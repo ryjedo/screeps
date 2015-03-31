@@ -10,7 +10,7 @@ module.exports = {
 		var count = 0;
 		var creep_list = Game.creeps;
 		
-		if(total() > 0) {
+		if(module.exports.total() > 0) {
 			for(var name in creep_list) {
 				var creep = creep_list[name];
 				//console.log(creep.memory.role);
@@ -20,7 +20,7 @@ module.exports = {
 			}
 			console.log("Screep_count_with_role:", role, count);
 			return count;
-		} else if (total() === 0) {
+		} else if (module.exports.total() === 0) {
 			console.log("Screep_count_with_role:", role, count);
 			return 0;
 		} else {

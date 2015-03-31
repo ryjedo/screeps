@@ -23,7 +23,9 @@ module.exports = {
 	},
 
 	//example function
-	other_method: function(arg){
-		return "a_thing";
+	total: function(){
+		var count = Object.keys(Game.creeps).length;
+		console.log("Total screeps:", count);
+		return count;
 	}
 };

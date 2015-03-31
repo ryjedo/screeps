@@ -5,5 +5,3 @@ spawner;
 
 //move the creeps
 creep_ai;
-
-console.log(Game.getUsedCpu());

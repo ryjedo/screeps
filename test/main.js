@@ -4,13 +4,13 @@ var spawner = require('spawner');
 var config = require('config');
 
 //check current populations and spawn re-inforcements
-//spawner;
+spawner;
 
 //imports config.js and outputs it to console
 //var config = require('config');
 //console.log(config.stuff);
 
-screep_count.with_role("harvester");
+//screep_count.with_role("harvester");
 screep_count.total();
 
 /*

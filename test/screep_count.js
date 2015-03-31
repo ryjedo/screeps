@@ -22,7 +22,6 @@ module.exports = {
 		}
 	},
 
-	//example function
 	total: function(){
 		var count = Object.keys(Game.creeps).length;
 		console.log("Total screeps:", count);

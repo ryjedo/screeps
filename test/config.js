@@ -12,11 +12,12 @@ module.exports = {
 			role: {role: 'builder'},
 			qty:  0, 
 		},
-		fighter: {
+		guard: {
 			body: [],
 			name: null,
-			role: {role: 'fighter'},
+			role: {role: 'guard'},
 			qty:  0, 
 		}
-	}
+	},
+	active_creeps: ["harvester"]
 };

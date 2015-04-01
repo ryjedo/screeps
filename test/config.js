@@ -4,7 +4,7 @@ module.exports = {
 			body: [Game.WORK, Game.CARRY, Game.MOVE], 
 			name: null, 
 			role: {role: 'harvester'},
-			qty:  2, 
+			qty:  1, 
 		},
 		builder: {
 			body: [],

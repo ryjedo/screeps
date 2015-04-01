@@ -9,13 +9,13 @@ module.exports = {
 		builder: {
 			body: [],
 			name: null,
-			role: {role: 'builder'}
+			role: {role: 'builder'},
 			qty:  0, 
 		},
 		fighter: {
 			body: [],
 			name: null,
-			role: {role: 'fighter'}
+			role: {role: 'fighter'},
 			qty:  0, 
 		}
 	}

@@ -1,23 +1,23 @@
 module.exports = {
 	creeps: {
 		harvester: {
-			body: [Game.WORK, Game.CARRY, Game.MOVE], 
+			body: [Game.WORK, Game.CARRY, Game.CARRY, Game.MOVE, Game.MOVE], 
 			name: null, 
 			role: {role: 'harvester'},
 			qty:  1, 
 		},
 		builder: {
-			body: [],
+			body: [Game.MOVE, Game.MOVE, Game.MOVE, Game.WORK, Game.CARRY],
 			name: null,
 			role: {role: 'builder'},
-			qty:  0, 
+			qty:  1, 
 		},
 		guard: {
-			body: [],
+			body: [Game.MOVE, Game.TOUGH, Game.TOUGH, Game.ATTACK, Game.ATTACK],
 			name: null,
 			role: {role: 'guard'},
-			qty:  0, 
+			qty:  1, 
 		}
 	},
-	active_creeps: ["harvester"]
+	active_creeps: ["harvester", "builder", "guard"]
 };

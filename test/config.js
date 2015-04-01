@@ -16,7 +16,7 @@ module.exports = {
 			body: [Game.MOVE, Game.TOUGH, Game.TOUGH, Game.ATTACK, Game.ATTACK],
 			name: null,
 			role: {role: 'guard'},
-			qty:  0, 
+			qty:  1, 
 		}
 	},
 	active_creeps: ["harvester", "builder", "guard"]

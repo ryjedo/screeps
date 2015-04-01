@@ -1,7 +1,7 @@
 var harvester = require('harvester');
 
 if (Object.keys(Game.creeps).length < 1) {
-	console.log("No Creeps Spawned");
+	//console.log("No Creeps Spawned");
 	return;
 }
 

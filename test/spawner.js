@@ -3,7 +3,7 @@ var screep_count = require('screep_count');
 var screep_list = config.active_creeps;
 
 for (var i = screep_list.length - 1; i >= 0; i--) {
-	if (screep_count.with_role(screep_list[i]) < config.creeps.screep_list[i].qty){
+	if (screep_count.with_role(screep_list[i]) < 1){
 		Game.spawns.Spawn1.createCreep(
 			config.creeps.harvester.body,
 			config.creeps.harvester.name,

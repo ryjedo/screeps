@@ -86,18 +86,84 @@ module.exports.loop = function () {
               });
             }
           } else {
-            // Second priority: Build construction sites
-            const constructionSite = creep.pos.findClosestByPath(
-              FIND_CONSTRUCTION_SITES
+            // Find the closest structure that needs repair
+            const damagedStructure = creep.pos.findClosestByRange(
+              FIND_STRUCTURES,
+              {
+                filter: (structure) => structure.hits < structure.hitsMax,
+              }
             );
-            if (constructionSite) {
-              if (creep.build(constructionSite) === ERR_NOT_IN_RANGE) {
-                creep.moveTo(constructionSite, {
-                  visualizePathStyle: { stroke: "#00ff00" },
+
+            if (damagedStructure) {
+              if (creep.repair(damagedStructure) === ERR_NOT_IN_RANGE) {
+                creep.moveTo(damagedStructure);
+              }
+            } else {
+              // Second priority: Build construction sites
+              const constructionSite = creep.pos.findClosestByPath(
+                FIND_CONSTRUCTION_SITES
+              );
+              if (constructionSite) {
+                if (creep.build(constructionSite) === ERR_NOT_IN_RANGE) {
+                  creep.moveTo(constructionSite, {
+                    visualizePathStyle: { stroke: "#00ff00" },
+                  });
+                }
+              } else {
+                // Third priority: Upgrade controller if no construction sites
+                const controller = creep.room.controller;
+                if (controller) {
+                  if (
+                    creep.upgradeController(controller) === ERR_NOT_IN_RANGE
+                  ) {
+                    creep.moveTo(controller, {
+                      visualizePathStyle: { stroke: "#ffffff" },
+                    });
+                  }
+                }
+              }
+            }
+          }
+          //} else if (creep.memory.role === 'worker') {
+
+          //} else if (creep.memory.role === 'hauler') {
+
+          //} else if (creep.memory.role === 'miner') {
+        } else {
+          // State logic for other roles (default harvester behavior)
+          if (creep.carry.energy === 0) {
+            creep.memory.harvesting = true;
+            creep.memory.depositing = false;
+          }
+          if (creep.carry.energy === creep.carryCapacity) {
+            creep.memory.harvesting = false;
+            creep.memory.depositing = true;
+          }
+          if (creep.memory.harvesting) {
+            const source = creep.pos.findClosestByPath(FIND_SOURCES);
+            if (source) {
+              if (creep.harvest(source) === ERR_NOT_IN_RANGE) {
+                creep.moveTo(source, {
+                  visualizePathStyle: { stroke: "#ffaa00" },
+                });
+              }
+            }
+          } else if (creep.memory.depositing) {
+            let target = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+              filter: (structure) =>
+                structure.structureType === STRUCTURE_SPAWN &&
+                structure.energy < structure.energyCapacity,
+            });
+            if (target) {
+              if (
+                creep.transfer(target, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE
+              ) {
+                creep.moveTo(target, {
+                  visualizePathStyle: { stroke: "#ffffff" },
                 });
               }
             } else {
-              // Third priority: Upgrade controller if no construction sites
+              // If no spawn needs energy, upgrade controller
               const controller = creep.room.controller;
               if (controller) {
                 if (creep.upgradeController(controller) === ERR_NOT_IN_RANGE) {
@@ -105,54 +171,6 @@ module.exports.loop = function () {
                     visualizePathStyle: { stroke: "#ffffff" },
                   });
                 }
-              }
-            }
-          }
-        }
-        //} else if (creep.memory.role === 'worker') {
-
-        //} else if (creep.memory.role === 'hauler') {
-
-        //} else if (creep.memory.role === 'miner') {
-      } else {
-        // State logic for other roles (default harvester behavior)
-        if (creep.carry.energy === 0) {
-          creep.memory.harvesting = true;
-          creep.memory.depositing = false;
-        }
-        if (creep.carry.energy === creep.carryCapacity) {
-          creep.memory.harvesting = false;
-          creep.memory.depositing = true;
-        }
-        if (creep.memory.harvesting) {
-          const source = creep.pos.findClosestByPath(FIND_SOURCES);
-          if (source) {
-            if (creep.harvest(source) === ERR_NOT_IN_RANGE) {
-              creep.moveTo(source, {
-                visualizePathStyle: { stroke: "#ffaa00" },
-              });
-            }
-          }
-        } else if (creep.memory.depositing) {
-          let target = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-            filter: (structure) =>
-              structure.structureType === STRUCTURE_SPAWN &&
-              structure.energy < structure.energyCapacity,
-          });
-          if (target) {
-            if (creep.transfer(target, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
-              creep.moveTo(target, {
-                visualizePathStyle: { stroke: "#ffffff" },
-              });
-            }
-          } else {
-            // If no spawn needs energy, upgrade controller
-            const controller = creep.room.controller;
-            if (controller) {
-              if (creep.upgradeController(controller) === ERR_NOT_IN_RANGE) {
-                creep.moveTo(controller, {
-                  visualizePathStyle: { stroke: "#ffffff" },
-                });
               }
             }
           }

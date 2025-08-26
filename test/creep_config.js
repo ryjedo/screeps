@@ -21,7 +21,7 @@ module.exports = {
     body: [WORK, WORK, WORK, MOVE],
   },
   worker: {
-    quantity: 1,
+    quantity: 0,
     body: [WORK, CARRY, MOVE, MOVE],
   },
 };

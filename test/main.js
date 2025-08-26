@@ -2,33 +2,8 @@ require("creep_prototypes");
 require("creep_logic");
 const CREEP_CONFIG = require("creep_config");
 const profiler = require("screeps_profiler");
-
-//const CREEP_CONFIG = {
-//    bootstrapper: {
-//        quantity: 4,
-//        body: [WORK, CARRY, MOVE, MOVE]
-//    },
-//    hauler: {
-//        quantity: 0,
-//        body: [CARRY, CARRY, MOVE, MOVE]
-//    },
-//    harvester: {
-//        quantity: 0,
-//        body: [WORK, CARRY, MOVE, MOVE]
-//    },
-//    miner: {
-//        quantity: 0,
-//       body: [WORK, WORK, WORK, MOVE]
-//    },
-//    worker: {
-//        quantity: 0,
-//        body: [WORK, CARRY, MOVE, MOVE]
-//   }
-// To add more roles, just extend here:
-// upgrader: { quantity: 2, body: [WORK, CARRY, MOVE] },
-// builder: { quantity: 2, body: [WORK, CARRY, MOVE] }
-//};
 //profiler.enable();
+
 module.exports.loop = function () {
   profiler.wrap(function () {
     // Creep Spawning for Configured Roles
@@ -55,10 +30,11 @@ module.exports.loop = function () {
         console.log("Clearing non-existing creep memory:", name);
       }
     }
+
     // Run role-based logic
     for (const name in Game.creeps) {
       const creep = Game.creeps[name];
-      if (creep.memory.role === "bootstrapper") {
+      if (true) {
         //creep.sayHello();
         if (creep.carry.energy === 0) {
           creep.memory.harvesting = true;

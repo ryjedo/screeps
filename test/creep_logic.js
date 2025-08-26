@@ -8,39 +8,39 @@ Creep.prototype.boostrapper = function () {
     // does a spawner/extension need energy
     const target = spawnNeedsEnergy();
     if (target) {
-      if (creep.transfer(target, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
-        creep.moveTo(target, {
+      if (this.transfer(target, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
+        this.moveTo(target, {
           visualizePathStyle: { stroke: "#ffffff" },
         });
       }
     }
 
     // check if a structure needs repair
-    const damagedStructure = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+    const damagedStructure = this.pos.findClosestByRange(FIND_STRUCTURES, {
       filter: (structure) => structure.hits < structure.hitsMax,
     });
 
     if (damagedStructure) {
-      if (creep.repair(damagedStructure) === ERR_NOT_IN_RANGE) {
-        creep.moveTo(damagedStructure);
+      if (this.repair(damagedStructure) === ERR_NOT_IN_RANGE) {
+        this.moveTo(damagedStructure);
       }
     }
 
     //Build Construction sites
-    const constructionSite = creep.pos.findClosestByPath(
+    const constructionSite = this.pos.findClosestByPath(
       FIND_CONSTRUCTION_SITES
     );
     if (constructionSite) {
-      if (creep.build(constructionSite) === ERR_NOT_IN_RANGE) {
-        creep.moveTo(constructionSite, {
+      if (this.build(constructionSite) === ERR_NOT_IN_RANGE) {
+        this.moveTo(constructionSite, {
           visualizePathStyle: { stroke: "#00ff00" },
         });
       }
     }
-    const controller = creep.room.controller;
+    const controller = this.room.controller;
     if (controller) {
-      if (creep.upgradeController(controller) === ERR_NOT_IN_RANGE) {
-        creep.moveTo(controller, {
+      if (this.upgradeController(controller) === ERR_NOT_IN_RANGE) {
+        this.moveTo(controller, {
           visualizePathStyle: { stroke: "#ffffff" },
         });
       }

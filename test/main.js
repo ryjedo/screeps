@@ -36,8 +36,8 @@ module.exports.loop = function () {
       const creep = Game.creeps[name];
       if (true) {
         //creep.sayHello();
-        creep.bootstrapper();
-        /*if (creep.carry.energy === 0) {
+        //creep.bootstrapper();
+        if (creep.carry.energy === 0) {
           creep.memory.harvesting = true;
           creep.memory.depositing = false;
         }
@@ -151,7 +151,7 @@ module.exports.loop = function () {
               }
             }
           }
-        }*/
+        }
       }
     }
   });

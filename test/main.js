@@ -36,10 +36,12 @@ module.exports.loop = function () {
       const roleCfg = CREEP_CONFIG[role];
       const creepsOfRole = _.filter(
         Game.creeps,
-        (creep) => creep.memory.role === role,
+        (creep) => creep.memory.role === role
       );
       if (creepsOfRole.length < roleCfg.quantity) {
-        const newName = `${role.charAt(0).toUpperCase() + role.slice(1)}${Game.time}`;
+        const newName = `${role.charAt(0).toUpperCase() + role.slice(1)}${
+          Game.time
+        }`;
         console.log("Spawning new " + role + ": " + newName);
         Game.spawns["Spawn1"].spawnCreep(roleCfg.body, newName, {
           memory: { role },
@@ -67,13 +69,15 @@ module.exports.loop = function () {
           creep.memory.depositing = true;
         }
         if (creep.memory.harvesting) {
-          creep.haulEnergy();
+          creep.harvestEnergy();
         } else if (creep.memory.depositing) {
           // First priority: Fill spawns that need energy
           let target = creep.pos.findClosestByPath(FIND_STRUCTURES, {
             filter: (structure) =>
-              structure.structureType === STRUCTURE_SPAWN &&
-              structure.energy < structure.energyCapacity,
+              (structure.structureType === STRUCTURE_EXTENSION ||
+                structure.structureType === STRUCTURE_SPAWN) &&
+              structure.store.getFreeCapacity(RESOURCE_ENERGY) >=
+                creep.carry.energy,
           });
           if (target) {
             if (creep.transfer(target, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
@@ -84,7 +88,7 @@ module.exports.loop = function () {
           } else {
             // Second priority: Build construction sites
             const constructionSite = creep.pos.findClosestByPath(
-              FIND_CONSTRUCTION_SITES,
+              FIND_CONSTRUCTION_SITES
             );
             if (constructionSite) {
               if (creep.build(constructionSite) === ERR_NOT_IN_RANGE) {

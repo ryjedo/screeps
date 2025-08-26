@@ -1,6 +1,7 @@
-require("prototype-test");
-require("creep-prototypes");
-var CREEP_CONFIG = require("config");
+require("creep_prototypes");
+require("creep_logic");
+const CREEP_CONFIG = require("creep_config");
+const profiler = require("screeps_profiler");
 
 //const CREEP_CONFIG = {
 //    bootstrapper: {
@@ -27,7 +28,6 @@ var CREEP_CONFIG = require("config");
 // upgrader: { quantity: 2, body: [WORK, CARRY, MOVE] },
 // builder: { quantity: 2, body: [WORK, CARRY, MOVE] }
 //};
-const profiler = require("screeps-profiler");
 //profiler.enable();
 module.exports.loop = function () {
   profiler.wrap(function () {

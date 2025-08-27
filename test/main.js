@@ -36,8 +36,8 @@ module.exports.loop = function () {
     // Run role-based logic
     for (const name in Game.creeps) {
       const creep = Game.creeps[name];
-      creep.bootstrapper();
-      /*if (true) {
+      //creep.bootstrapper();
+      if (true) {
         //creep.sayHello();
         //creep.bootstrapper();
         if (creep.carry.energy === 0) {
@@ -155,7 +155,7 @@ module.exports.loop = function () {
             }
           }
         }
-      }*/
+      }
     }
   });
 };

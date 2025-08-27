@@ -6,6 +6,7 @@ const profiler = require("screeps_profiler");
 
 module.exports.loop = function () {
   profiler.wrap(function () {
+
     // Creep Spawning for Configured Roles
     for (const role in CREEP_CONFIG) {
       const roleCfg = CREEP_CONFIG[role];
@@ -23,6 +24,7 @@ module.exports.loop = function () {
         });
       }
     }
+
     // Clean up memory for dead creeps
     for (const name in Memory.creeps) {
       if (!Game.creeps[name]) {
@@ -35,7 +37,7 @@ module.exports.loop = function () {
     for (const name in Game.creeps) {
       const creep = Game.creeps[name];
       if (true) {
-        //creep.sayHello();
+        creep.sayHello();
         //creep.bootstrapper();
         if (creep.carry.energy === 0) {
           creep.memory.harvesting = true;

@@ -47,7 +47,9 @@ Creep.prototype.boostrapper = function () {
     }
   }
 };
-
+Creep.prototype.sayHello = function () {
+   this.say("Hello!");
+};
 /*
 
     this.harvestEnergy();

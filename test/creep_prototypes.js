@@ -36,6 +36,3 @@ Creep.prototype.storeEnergy = function () {
     }
   }
 };
-Creep.prototype.sayHello = function () {
-   this.say("Hello!");
-};

@@ -37,7 +37,7 @@ module.exports.loop = function () {
     for (const name in Game.creeps) {
       const creep = Game.creeps[name];
       if (true) {
-        creep.sayHello();
+        //creep.sayHello();
         //creep.bootstrapper();
         if (creep.carry.energy === 0) {
           creep.memory.harvesting = true;

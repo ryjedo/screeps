@@ -1,6 +1,6 @@
 require("creep_prototypes");
 
-Creep.prototype.boostrapper = function () {
+Creep.prototype.bootstrapper = function () {
   // Check if the creep has energy.
   if (this.isEmpty) {
     this.memory.task = "harvest";
